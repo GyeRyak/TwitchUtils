@@ -1,0 +1,42 @@
+{
+  "SHOP_POTION_COMMAND": [
+    "!sp",
+    "!shoppotion"
+  ],
+  "SHOP_POTION_MESSAGE_DEFAULT": "@<T_VIEWER> (<SP_NUM>) <SP_NAME>: <SP_DESC>",
+  "SHOP_POTIONS_ONE_MESSAGE_DEFAULT": "<SP_NAME>(<SP_NUM>)",
+  "SHOP_POTIONS_MESSAGE_DEFAULT": "@<T_VIEWER> <SP_LIST>",
+  "SHOP_POTIONS_SEPARATOR_MESSAGE_DEFAULT": ", ",
+  "SHOP_POTION_ENABLED": true,
+  "SHOP_POTION_ALL_ENABLED": true,
+  "SHOP_POTION_ONE_ENABLED": true,
+  "TIMEOUT_GLOBAL": 1,
+  "TIMEOUT_ONE": 10000,
+  "TIMEOUT_ALL": 20000,
+  "MAX_LEN": 2147483647,
+  "COMMENTS": [
+	"This is config file for the shop potion command",
+	"SHOP_POTION_COMMAND is a list of the prefix that is used for command",
+	"If viewer type only prefix, it will say list of the potion by",
+	"format as SHOP_POTIONS_ONE_MESSAGE_DEFAULT of each potion",
+	"separate by SHOP_POTIONS_SEPARATOR_MESSAGE_DEFAULT",
+	"and finally say as format SHOP_POTIONS_MESSAGE_DEFAULT",
+	"If viewer type the slot number (leftmost is 1)",
+	"say as format SHOP_POTION_MESSAGE_DEFAULT",
+	"<T_VIEWER> is the ID of Twitch viewer typed command",
+	"<SP_NUMBER> is the slot of the potion(starts from 1, convert to positive)",
+	"<SP_NAME> is the name of potion",
+	"<SP_DESC> is the description of potion",
+	"<SP_LIST> is the list of parsed potion",
+	"SHOP_POTION_ENABLED determine whether use this command. true/false",
+	"SHOP_POTION_ALL_ENABLED determine whether use say all command(without number). true/false",
+	"SHOP_POTION_ONE_ENABLED determine whether use say one command(with number). true/false",
+	"TIMEOUT_GLOBAL is the global cooldown(ms, 1000ms=1second) for this command",
+	"TIMEOUT_ALL is the cooldown(ms, 1000ms=1second) for say all command",
+	"TIMEOUT_ONE is the cooldown(ms, 1000ms=1second) for say one command, applied for each slot",
+	"MAX_LEN is the max length of the description of one potion (2147483647 = infinite)",
+	"example of the default, !sr -> @gyeryak Block Potion(1), Energy Potion(2), Strength Potion(3)",
+	"example of the default, !sr 2 -> @gyeryak (2) Energy Potion: Gain 2 Energy.",
+	"Be careful of the JSON and Regex"
+  ]
+}

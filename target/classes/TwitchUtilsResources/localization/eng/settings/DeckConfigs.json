@@ -1,0 +1,31 @@
+{
+  "DECK_COMMAND": [
+    "!dl",
+    "!decklist"
+  ],
+  "DECK_MESSAGE_DEFAULT": "@<T_VIEWER> <C_LIST>",
+  "CARD_SINGLE_MESSAGE_DEFAULT": "<C_NAME>",
+  "CARD_PLURAL_MESSAGE_DEFAULT": "<C_COUNT>x<C_NAME>",
+  "CARD_SEPARATOR_MESSAGE_DEFAULT": ", ",
+  "DECK_ENABLED": true,
+  "TIMEOUT_GLOBAL": 20000,
+  "MAX_LEN": 2147483647,
+  "COMMENTS": [
+	"This is config file for deck list command",
+	"DECK_COMMAND is a list of the prefix that is used for command",
+	"DECK_MESSAGE_DEFAULT is the message to say",
+	"Only one card will be parsed to CARD_SINGLE_MESSAGE_DEFAULT",
+	"Two or more cards will be parsed to CARD_PLURAL_MESSAGE_DEFAULT",
+	"CARD_SEPARATOR_MESSAGE_DEFAULT is a separator between card strings",
+	"<T_VIEWER> is the ID of Twitch viewer typed command",
+	"<C_COUNT> is the count of the card",
+	"<C_NAME> is the name of card",
+	"<C_DESC> is the description of card",
+	"<C_LIST> is the list of the cards",
+	"DECK_ENABLED determine whether use this command, true/false",
+	"TIMEOUT_GLOBAL is the cooldown of this command(ms, 1000ms=1초)",
+	"MAX_LEN is the maximum length of the one description of the card(2147483647 = infinite)",
+	"example of the default, !dl -> @gyeryak 4xStrike, Strike+, 5xDefend",
+	"Be careful of the JSON and Regex"
+  ]
+}

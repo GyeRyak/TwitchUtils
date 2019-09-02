@@ -1,0 +1,15 @@
+{
+  "twitchutils:Options": {
+    "TEXT": [
+      "기본 투표기능 비활성화"
+    ]  
+  },
+  "twitchutils:Mods_Descriptions": {
+    "TEXT": [
+      "NOTE: BaseMod Default Description",
+      "모든 모드에 필수적인 모드",
+      "NOTE: TwitchUtils Default Description",
+      "지금 사용한 명령어"
+    ]
+  }
+}

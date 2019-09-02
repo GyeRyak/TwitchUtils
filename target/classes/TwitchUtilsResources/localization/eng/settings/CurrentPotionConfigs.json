@@ -1,0 +1,43 @@
+{
+  "CURRENT_POTION_COMMAND": [
+    "!cp",
+    "!potion"
+  ],
+  "CURRENT_POTION_MESSAGE_DEFAULT": "@<T_VIEWER> (<CP_NUM>) <CP_NAME>: <CP_DESC>",
+  "CURRENT_POTIONS_ONE_MESSAGE_DEFAULT": "<CP_NAME>(<CP_NUM>)",
+  "CURRENT_POTIONS_MESSAGE_DEFAULT": "@<T_VIEWER> <CP_LIST>",
+  "CURRENT_POTIONS_SEPARATOR_MESSAGE_DEFAULT": ", ",
+  "CURRENT_POTION_ENABLED": true,
+  "CURRENT_POTION_ALL_ENABLED": true,
+  "CURRENT_POTION_ONE_ENABLED": true,
+  "TIMEOUT_GLOBAL": 1,
+  "TIMEOUT_ALL": 20000,
+  "TIMEOUT_ONE": 10000,
+  "MAX_LEN": 2147483647,
+  "COMMENTS": [
+	"This is config file for the current potion command",
+	"CURRENT_POTION_COMMAND is a list of the prefix that is used for command",
+	"If viewer type only prefix, it will say list of the potion by",
+	"format as CURRENT_POTIONS_ONE_MESSAGE_DEFAULT of each potion",
+	"separate by CURRENT_POTIONS_SEPARATOR_MESSAGE_DEFAULT",
+	"and finally say as format CURRENT_POTIONS_MESSAGE_DEFAULT",
+	"If viewer type the slot number (leftmost is 1)",
+	"say as format CURRENT_POTION_MESSAGE_DEFAULT",
+	"<T_VIEWER> is the ID of Twitch viewer typed command",
+	"<CP_NUMBER> is the slot of the potion(starts from 1)",
+	"<CP_NAME> is the name of potion",
+	"<CP_DESC> is the description of potion",
+	"<CP_LIST> is the list of parsed potion",
+	"CURRENT_POTION_ENABLED determine whether use this command. true/false",
+	"CURRENT_POTION_ALL_ENABLED determine whether use say all command(without number). true/false",
+	"CURRENT_POTION_ONE_ENABLED determine whether use say one command(with number). true/false",
+	"TIMEOUT_GLOBAL is the global cooldown(ms, 1000ms=1second) for this command",
+	"TIMEOUT_ALL is the cooldown(ms, 1000ms=1second) for say all command",
+	"TIMEOUT_ONE is the cooldown(ms, 1000ms=1second) for say one command, applied for each slot",
+	"MAX_LEN is the max length of the description of one potion (2147483647 = infinite)",
+	"If the description of one potion is longer than MAX_LEN, it trims with following ...",
+	"example of the default, !cp -> '@gyeryak Strength Potion(1), Speed Potion(4), Flex Potion(5)",
+	"example of the default, !cp 1 -> '@gyeryak (1) Strength Potion: Gain 2 Strength",
+	"Be careful of the JSON and Regex"
+  ]
+}

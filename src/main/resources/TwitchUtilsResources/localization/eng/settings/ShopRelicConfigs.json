@@ -1,0 +1,42 @@
+{
+  "SHOP_RELIC_COMMAND": [
+    "!sr",
+    "!shoprelic"
+  ],
+  "SHOP_RELIC_MESSAGE_DEFAULT": "@<T_VIEWER> (<SR_NUM>) <SR_NAME>: <SR_DESC>",
+  "SHOP_RELICS_ONE_MESSAGE_DEFAULT": "<SR_NAME>(<SR_NUM>)",
+  "SHOP_RELICS_MESSAGE_DEFAULT": "@<T_VIEWER> <SR_LIST>",
+  "SHOP_RELICS_SEPARATOR_MESSAGE_DEFAULT": ", ",
+  "SHOP_RELIC_ENABLED": true,
+  "SHOP_RELIC_ALL_ENABLED": true,
+  "SHOP_RELIC_ONE_ENABLED": true,
+  "TIMEOUT_GLOBAL": 1,
+  "TIMEOUT_ONE": 10000,
+  "TIMEOUT_ALL": 20000,
+  "MAX_LEN": 2147483647,
+  "COMMENTS": [
+	"This is config file for the shop relic command",
+	"SHOP_RELIC_COMMAND is a list of the prefix that is used for command",
+	"If viewer type only prefix, it will say list of the relic by",
+	"format as SHOP_RELICS_ONE_MESSAGE_DEFAULT of each relic",
+	"separate by SHOP_RELICS_SEPARATOR_MESSAGE_DEFAULT",
+	"and finally say as format SHOP_RELICS_MESSAGE_DEFAULT",
+	"If viewer type the slot number (leftmost is 1)",
+	"say as format SHOP_RELIC_MESSAGE_DEFAULT",
+	"<T_VIEWER> is the ID of Twitch viewer typed command",
+	"<SR_NUMBER> is the slot of the relic(starts from 1, convert to positive)",
+	"<SR_NAME> is the name of relic",
+	"<SR_DESC> is the description of relic",
+	"<SR_LIST> is the list of parsed relic",
+	"SHOP_RELIC_ENABLED determine whether use this command. true/false",
+	"SHOP_RELIC_ALL_ENABLED determine whether use say all command(without number). true/false",
+	"SHOP_RELIC_ONE_ENABLED determine whether use say one command(with number). true/false",
+	"TIMEOUT_GLOBAL is the global cooldown(ms, 1000ms=1second) for this command",
+	"TIMEOUT_ALL is the cooldown(ms, 1000ms=1second) for say all command",
+	"TIMEOUT_ONE is the cooldown(ms, 1000ms=1second) for say one command, applied for each slot",
+	"MAX_LEN is the max length of the description of one relic (2147483647 = infinite)",
+	"example of the default, !sr -> @gyeryak Wing Boots(1), Ginger(2), Medical Kit(3)",
+	"example of the default, !sr 1 -> @gyeryak (1) Wing Boots: SOME_DESC",
+	"Be careful of the JSON and Regex"
+  ]
+}

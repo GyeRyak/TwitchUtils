@@ -1,0 +1,15 @@
+{
+  "twitchutils:Options": {
+    "TEXT": [
+      "Disable vanilla Twitch vote"
+    ]  
+  },
+  "twitchutils:Mods_Descriptions": {
+    "TEXT": [
+      "NOTE: BaseMod Default Description",
+      "Essential for all mods",
+      "NOTE: TwitchUtils Default Description",
+      "Mod that you used just now"
+    ]
+  }
+}
