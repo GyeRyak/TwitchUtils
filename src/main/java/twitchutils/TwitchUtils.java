@@ -7,12 +7,14 @@ import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import twitchutils.commands.*;
+import twitchutils.configs.commands.CardInfoConfigs;
 import twitchutils.configs.twitch.VanillaVoteConfigs;
 import twitchutils.helper.ResourcesManager;
 
@@ -33,6 +35,7 @@ public class TwitchUtils implements PostInitializeSubscriber {
     public CommandShopRelic mCommandShopRelic;
     public CommandShopPotion mCommandShopPotion;
     public CommandDeck mCommandDeck;
+    public CommandCardInfo mCommandCardInfo;
 
     public static boolean vanillaVote_Disable = false;
     public static final Logger twitchUtilsLogger = LogManager.getLogger(MOD_ID);
@@ -112,6 +115,12 @@ public class TwitchUtils implements PostInitializeSubscriber {
 
         mCommandDeck = new CommandDeck();
         mCommandDeck.addCommand();
+
+        mCommandCardInfo = new CommandCardInfo();
+        mCommandCardInfo.addCommand();
+
+
+        //CardInfoConfigs cardInfoConfigs = new CardInfoConfigs().getConfig();
 
         //DeckConfigs deckConfigs = new DeckConfigs().getConfig();
     }

@@ -1,13 +1,16 @@
 package twitchutils.helper;
 
+import com.megacrit.cardcrawl.cards.DescriptionLine;
 import twitchutils.configs.GenericConfigs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CommandHelper {
     public static int MAX_LEN_INFINITE = Integer.MAX_VALUE;
 
-    public static final String ENERGY_ORIGIN = "\\[E\\]";
+    public static final ArrayList<String> ENERGY_ORIGIN = new ArrayList<String>(
+            Arrays.asList("\\[E\\]", "\\[R\\]", "\\[G\\]", "\\[B\\]", "\\[P\\]", "\\[W\\]"));
     public static final String ENERGY_SEPARATOR = " ";
     public static final int ENERGY_MAX_PARSE = 10;
 
@@ -56,6 +59,20 @@ public class CommandHelper {
         else return ret.substring(0, maxLen - 1) + "...";
     }
 
+    public static String trimDescription(ArrayList<DescriptionLine> tarDescription, int maxLen) {
+        StringBuilder pendingDescription = new StringBuilder();
+
+        pendingDescription.append(tarDescription.get(0).getText());
+
+        int descLen = tarDescription.size();
+        for(int i=1; i<descLen; i++){
+            pendingDescription.append(" ");
+            pendingDescription.append(tarDescription.get(i).getText());
+        }
+
+        return trimDescription(pendingDescription.toString(), maxLen);
+    }
+
     public static boolean isDuringCoolDown(Long tarVariable, Long timeOutDelay) {
         Long nowTime = System.currentTimeMillis();
         return tarVariable + timeOutDelay > nowTime;
@@ -63,24 +80,30 @@ public class CommandHelper {
 
 
     public static String convertEnergyToText(String tarDescription) {
-        ArrayList<String> energyStrings = new ArrayList<>();
+        GenericConfigs genericConfigs = new GenericConfigs().getConfig();
         String ret = tarDescription;
 
-        energyStrings.add("");
-        energyStrings.add(ENERGY_ORIGIN);
-        for (int i = 2; i < 2 + ENERGY_MAX_PARSE - 1; i++) {
-            energyStrings.add(energyStrings.get(i - 1) + ENERGY_SEPARATOR + ENERGY_ORIGIN);
+        for(String energyOrigin: ENERGY_ORIGIN){
+            ArrayList<String> energyStrings = new ArrayList<>();
+
+            energyStrings.add("");
+            energyStrings.add(energyOrigin);
+            for (int i = 2; i < 2 + ENERGY_MAX_PARSE - 1; i++) {
+                energyStrings.add(energyStrings.get(i - 1) + ENERGY_SEPARATOR + energyOrigin);
+            }
+
+            for (int i = ENERGY_MAX_PARSE; i > 1; i--) {
+                ret = ret.replaceAll(energyStrings.get(i),
+                        genericConfigs.ENERGY_TEXT_PLURAL.replaceAll(
+                                GenericConfigs.DESCRIPTION_ENERGY_COUNT, "" + i));
+            }
+            ret = ret.replaceAll(energyStrings.get(1),
+                    genericConfigs.ENERGY_TEXT_SINGLE.replaceAll(
+                            GenericConfigs.DESCRIPTION_ENERGY_COUNT, "" + 1));
         }
 
-        GenericConfigs genericConfigs = new GenericConfigs().getConfig();
-        for (int i = ENERGY_MAX_PARSE; i > 1; i--) {
-            ret = ret.replaceAll(energyStrings.get(i),
-                    genericConfigs.ENERGY_TEXT_PLURAL.replaceAll(
-                            GenericConfigs.DESCRIPTION_ENERGY_COUNT, "" + i));
-        }
-        ret = ret.replaceAll(energyStrings.get(1),
-                genericConfigs.ENERGY_TEXT_SINGLE.replaceAll(
-                        GenericConfigs.DESCRIPTION_ENERGY_COUNT, "" + 1));
+
+
 
         return ret;
     }

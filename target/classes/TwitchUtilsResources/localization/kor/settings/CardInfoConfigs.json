@@ -1,0 +1,12 @@
+{
+  "CARDINFO_COMMAND": [
+    "!ci",
+	"!카드정보"
+  ],
+  "CARDINFO_INFO_MESSAGE": "@<T_VIEWER> <CI_NAME> [<CI_COST>](<CI_TYPE>, <CI_COLOR>, <CI_RARITY>): <CI_DESC>",
+  "CARDINFO_NONE_MESSAGE": "@<T_VIEWER> '<CI_REQUEST>' 이름의 카드는 없습니다.",
+  "CARDINFO_ENABLED": true,
+  "TIMEOUT_GLOBAL": 100,
+  "MAX_LEN": 500,
+  "COMMENTS": []
+}
