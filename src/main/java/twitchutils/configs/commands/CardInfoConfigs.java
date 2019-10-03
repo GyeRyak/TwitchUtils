@@ -8,7 +8,7 @@ public class CardInfoConfigs extends ConfigBasis<CardInfoConfigs> {
 
     public ArrayList<String> CARDINFO_COMMAND = new ArrayList<>(); // command
     public String CARDINFO_INFO_MESSAGE = "@<T_VIEWER> <CI_NAME>[<CI_COST>](<CI_TYPE>, <CI_COLOR>, <CI_RARITY>): <CI_DESC>"; // only one mod command
-    public String CARDINFO_NONE_MESSAGE = "@<T_VIEWER> No such card named '<C_REQUEST>'";
+    public String CARDINFO_NONE_MESSAGE = "@<T_VIEWER> No such card named '<CI_REQUEST>'";
 
     public static final String DESCRIPTION_CARDINFO_NAME = "<CI_NAME>"; // mod lists string
     public static final String DESCRIPTION_CARDINFO_DESCRIPTION = "<CI_DESC>"; // mod name

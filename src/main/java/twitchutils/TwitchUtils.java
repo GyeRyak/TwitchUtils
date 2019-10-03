@@ -36,6 +36,7 @@ public class TwitchUtils implements PostInitializeSubscriber {
     public CommandShopPotion mCommandShopPotion;
     public CommandDeck mCommandDeck;
     public CommandCardInfo mCommandCardInfo;
+    public CommandRelicInfo mCommandRelicInfo;
 
     public static boolean vanillaVote_Disable = false;
     public static final Logger twitchUtilsLogger = LogManager.getLogger(MOD_ID);
@@ -118,6 +119,9 @@ public class TwitchUtils implements PostInitializeSubscriber {
 
         mCommandCardInfo = new CommandCardInfo();
         mCommandCardInfo.addCommand();
+
+        mCommandRelicInfo = new CommandRelicInfo();
+        mCommandRelicInfo.addCommand();
 
 
         //CardInfoConfigs cardInfoConfigs = new CardInfoConfigs().getConfig();

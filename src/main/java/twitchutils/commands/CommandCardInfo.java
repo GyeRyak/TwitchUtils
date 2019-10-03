@@ -1,6 +1,5 @@
 package twitchutils.commands;
 
-import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,6 +7,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import de.robojumper.ststwitch.TwitchConnection;
 import de.robojumper.ststwitch.TwitchMessageListener;
 import twitchutils.configs.commands.CardInfoConfigs;
+import twitchutils.helper.CharacterHelper;
 import twitchutils.helper.CommandHelper;
 
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ import java.util.List;
 
 public class CommandCardInfo {
 
-    CardInfoConfigs cardInfoConfigs;
-    HashMap<String, AbstractCard> cardInfos = new HashMap<>();
+    public CardInfoConfigs cardInfoConfigs;
+    public HashMap<String, AbstractCard> cardInfos = new HashMap<>();
 
     public Long timeStampGlobal = 0L;
 
@@ -106,10 +106,10 @@ public class CommandCardInfo {
                 )
                 .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_TYPE,
                         typeString(card.type))
-                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_COLOR, // 기존 캐릭터랑 모드캐릭(BaseMod.getModdedChar...) 해서 해당 캐릭터 이름이랑 해당 캐릭터의 CardColor을 Map에 넣어두고 찾는 방식으로
-                        CardLibrary.LibraryType.valueOf(card.color.name()).name())
-                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_RARITY, // 그냥 무식하게 희귀도 해당하는 파일 찾아서
-                        card.rarity.name()) 
+                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_COLOR,
+                        CharacterHelper.getCharacterHelper().getLocalizedCharacterName(card.color))
+                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_RARITY,
+                        CharacterHelper.getCharacterHelper().getLocalizedCardRarity(card.rarity))
                 .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_COST,
                         (card.cost==-2?"-":(card.cost==-1?"X":String.valueOf(card.cost))))
                 .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_NAME, card.name);

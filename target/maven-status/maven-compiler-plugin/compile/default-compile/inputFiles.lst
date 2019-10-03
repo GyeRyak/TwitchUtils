@@ -7,11 +7,14 @@ C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\configs\commands\ShopPotionConfigs.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\commands\CommandShopPotion.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\commands\CommandShopRelic.java
+C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\commands\CommandRelicInfo.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\commands\CommandCurrentRelic.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\configs\commands\CardInfoConfigs.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\patches\NormalVoteOff.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\configs\commands\ModsConfigs.java
+C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\helper\CharacterHelper.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\connection\TwitchUtilsConnection.java
+C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\configs\commands\RelicInfoConfigs.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\configs\commands\DeckConfigs.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\configs\twitch\VanillaVoteConfigs.java
 C:\Users\SM\Desktop\Dev\GitHub\AppPractice\StS-Mods\TwitchUtils\TwitchUtils\src\main\java\twitchutils\fetchers\ModListFetcher.java
