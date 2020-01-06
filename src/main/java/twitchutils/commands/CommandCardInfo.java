@@ -27,7 +27,7 @@ public class CommandCardInfo {
 
         ArrayList<AbstractCard> cardDatum = CardLibrary.getAllCards(); // load all cards
         for(AbstractCard tarCard: cardDatum){
-            cardInfos.put(tarCard.name.replaceAll(" ", ""), tarCard);
+            cardInfos.put(tarCard.name.replaceAll(" ", "").toLowerCase(), tarCard);
         }
     }
 
@@ -70,7 +70,7 @@ public class CommandCardInfo {
             isUpgraded = true;
             msg = msg.replaceAll("\\+", "");
         }
-        msg = msg.replaceAll(" ", "");
+        msg = msg.replaceAll(" ", "").toLowerCase();
 
         if (cardInfos.containsKey(msg)) {
             AbstractCard tarCard = cardInfos.get(msg).makeStatEquivalentCopy();
@@ -112,7 +112,8 @@ public class CommandCardInfo {
                         CharacterHelper.getCharacterHelper().getLocalizedCardRarity(card.rarity))
                 .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_COST,
                         (card.cost==-2?"-":(card.cost==-1?"X":String.valueOf(card.cost))))
-                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_NAME, card.name);
+                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_NAME, card.name)
+                .replaceAll(CardInfoConfigs.DESCRIPTION_CARDINFO_ID, card.cardID);
     }
 
     public static String typeString(AbstractCard.CardType type) {

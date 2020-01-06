@@ -48,7 +48,7 @@ public class CommandRelicInfo {
                 BaseMod.getAllCustomRelics(); // only get modded character only relic
         for(AbstractCard.CardColor tarColorPool: moddedRelics.keySet()){
             for(AbstractRelic tarRelic: moddedRelics.get(tarColorPool).values()){
-                relicInfos.put(tarRelic.name.replaceAll(" ", ""),
+                relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
                         new RelicWithColor(tarRelic, tarColorPool));
             }
         }
@@ -57,36 +57,37 @@ public class CommandRelicInfo {
         HashMap<String, AbstractRelic> sharedRelics =
                 (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "sharedRelics");
         for (AbstractRelic tarRelic : sharedRelics.values()) {
-            relicInfos.put(tarRelic.name.replaceAll(" ", ""),
+            relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
                     new RelicWithColor(tarRelic, true));
         }
 
         HashMap<String, AbstractRelic> redRelics =
                 (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "redRelics");
         for (AbstractRelic tarRelic : redRelics.values()) {
-            relicInfos.put(tarRelic.name.replaceAll(" ", ""),
+            relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
                     new RelicWithColor(tarRelic, AbstractCard.CardColor.RED));
         }
 
         HashMap<String, AbstractRelic> greenRelics =
                 (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "greenRelics");
         for (AbstractRelic tarRelic : greenRelics.values()) {
-            relicInfos.put(tarRelic.name.replaceAll(" ", ""),
+            relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
                     new RelicWithColor(tarRelic, AbstractCard.CardColor.GREEN));
         }
 
         HashMap<String, AbstractRelic> blueRelics =
                 (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "blueRelics");
         for (AbstractRelic tarRelic : blueRelics.values()) {
-            relicInfos.put(tarRelic.name.replaceAll(" ", ""),
-                    new RelicWithColor(tarRelic, AbstractCard.CardColor.GREEN));
+            relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
+                    new RelicWithColor(tarRelic, AbstractCard.CardColor.BLUE));
         }
 
-        if (Settings.isBeta) {
+        if (Settings.isBeta) { // If it is beta
             HashMap<String, AbstractRelic> purpleRelics =
                     (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "purpleRelics");
             for (AbstractRelic tarRelic : purpleRelics.values()) {
-                relicInfos.put(tarRelic.name, new RelicWithColor(tarRelic, AbstractCard.CardColor.PURPLE));
+                relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
+                        new RelicWithColor(tarRelic, AbstractCard.CardColor.PURPLE));
             }
         }
     }
@@ -125,7 +126,7 @@ public class CommandRelicInfo {
             return; // timeout check
         timeStampGlobal = System.currentTimeMillis();
 
-        msg = msg.replaceAll(" ", "");
+        msg = msg.replaceAll(" ", "").toLowerCase();
 
         if (relicInfos.containsKey(msg)) {
             RelicWithColor tarRelicWithColor = relicInfos.get(msg);
@@ -159,6 +160,7 @@ public class CommandRelicInfo {
     public String getParsedRelicString(String origin, AbstractRelic relic){
         return origin
                 .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_NAME, relic.name)
+                .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_ID, relic.relicId)
                 .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_DESCRIPTION,
                         CommandHelper.trimDescription(relic.description, relicInfoConfigs.MAX_LEN))
                 .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_FLAVOR,
