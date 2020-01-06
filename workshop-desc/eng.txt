@@ -15,29 +15,29 @@ You can toggle that disable stuff with in-game config(and .json config file)
 
 [h1]Features[/h1]
 [list]
-[*] [b]Check Current Relics[/b] 
-!cr <number>, !cr
-!cr 1 for leftmost relic, !cr -1 for rightmost relic
+[*] [b]Check Current Relics/Potions[/b] 
+!cr for all relics, !cr 1 for leftmost relic, !cr -1 for rightmost relic. Same with !currentrelic
+!cp for all potions, !cp 1 for leftmost relic. Same with !currentpotion
 
-[*] [b]Check Current Potions [/b]
-!cp <number>, !cp
-!cp 1 for leftmost potion
-
-[*] [b]Check Shop Relics[/b]
-!sr [number], similiar with !cp
-
-[*] [b]Check Shop Potions[/b]
-!sp [number], similiar with !cp
+[*] [b]Check Shop Relics/Potions[/b]
+!sr for all relics, !sr 1 for leftmost relic. Same with !shoprelic
+!sp for all potions, !sp 1 for leftmost potion. Same with !shoppotion
 
 [*] [b]Check Current Deck list[/b]
-!dl
+!dl, same with !decklist
 
-[*] [b]Check Current Mods Using[/b]
-!cm, all the mods using
-!cm <mod name>, for specific mod (!cm twichUtils, !cm tWiTch Utils, !cm twi -> TwitchUtils)
+[*] [b]Check Workshop Mods using now[/b]
+!cm for all the mods using, !cm <mod name> for specific mod (!cm twichUtils, !cm tWiTch Utils, !cm twi -> TwitchUtils)
 
 [*] [b]Disable Card & Boss Relic Voting[/b]
 You can toggle this stuff in-game
+
+[*] [b]Search Specific Card/Relic Info[/b]
+!cardinfo <card name>, !cardinfo <card name>+ for upgraded card. Same with !ci
+!relicinfo <relic name>, Same with !ri
+
+[*] [b]Other Mod support[/b]
+Character/Card/Potion/Relic from other workshop can be checkable with this
 [/list]
 
 
@@ -52,13 +52,9 @@ You can toggle this stuff in-game
 [/list]
 
 
-[h1]TODO[/h1]
+[h1]Others[/h1]
 [list]
-[*] Boss relic commands & customizing
-[*] Check relic/potion/card description search with name + customizing
+[*] You can check progress, suggest or bug report at [url=https://github.com/GyeRyak/TwitchUtils]GitHub Repository[/url]. Localizing and Code contribution are also welcomed!
 [/list]
 
 Special Thanks to Jedi
-
-
-Bug Report & Feature Suggestion are welcomed!
