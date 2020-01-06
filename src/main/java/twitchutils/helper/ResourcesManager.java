@@ -60,7 +60,7 @@ public class ResourcesManager {
     }
 
     public static String getLocalizationPath(String type, String name) {
-        return RESOURCES_NAME + "/" + CATEGORY_LOCALIZATION + "/" + LanguageFetcher.getLanaguage() + "/"
+        return RESOURCES_NAME + "/" + CATEGORY_LOCALIZATION + "/" + LanguageFetcher.getLanguage() + "/"
                 + type + "/" + name + "." + EXT;
     }
 

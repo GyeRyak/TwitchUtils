@@ -3,7 +3,7 @@ package twitchutils.fetchers;
 import com.megacrit.cardcrawl.core.Settings;
 
 public class LanguageFetcher {
-    public static String getLanaguage() {
+    public static String getLanguage() {
         switch (Settings.language) {
             case KOR:
                 return "kor";
