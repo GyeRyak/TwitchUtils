@@ -1,0 +1,64 @@
+Bunches of stuffs for Twitch Streamer and Viewer!
+(This is third-party mod, not related to Twitch nor MegaCrit)
+
+[h1]No more "What's that relic?" or "What's that potion" :P[/h1]
+
+Most of the commands and messages are modifiable :)
+Edit .json files in %LOCALAPPDATA%/ModTheSpire/TwitchUtils (Windows)
+Detailed comments are in the file.
+
+
+You(Streamer) should use the Twitch Mod of the Vanilla Slay the Spire.
+and this disable the basic voting things of it by default
+You can toggle that disable stuff with in-game config(and .json config file)
+
+
+[h1]Features[/h1]
+[list]
+[*] [b]Check Current Relics[/b] 
+!cr <number>, !cr
+!cr 1 for leftmost relic, !cr -1 for rightmost relic
+
+[*] [b]Check Current Potions [/b]
+!cp <number>, !cp
+!cp 1 for leftmost potion
+
+[*] [b]Check Shop Relics[/b]
+!sr [number], similiar with !cp
+
+[*] [b]Check Shop Potions[/b]
+!sp [number], similiar with !cp
+
+[*] [b]Check Current Deck list[/b]
+!dl
+
+[*] [b]Check Current Mods Using[/b]
+!cm, all the mods using
+!cm <mod name>, for specific mod (!cm twichUtils, !cm tWiTch Utils, !cm twi -> TwitchUtils)
+
+[*] [b]Disable Card & Boss Relic Voting[/b]
+You can toggle this stuff in-game
+[/list]
+
+
+[h1]Customizing[/h1]
+[list]
+[*] Command(prefix), Message(output format), On/Off, Cooldown for current relic/potion, shop relic/potion, decklist, current mod command
+[*] Custom Description for each mod, for current mod command
+[*] %LOCALAPPDATA%/ModTheSpire/TwitchUtils
+[*] Once you run this mod (with other mods for your custom mod description), .json configs will be generate the directory above
+[*] Detailed how-to-edit is written in the file
+[*] Support the default config values for English and Korean (depend on your StS Language setting)
+[/list]
+
+
+[h1]TODO[/h1]
+[list]
+[*] Boss relic commands & customizing
+[*] Check relic/potion/card description search with name + customizing
+[/list]
+
+Special Thanks to Jedi
+
+
+Bug Report & Feature Suggestion are welcomed!
