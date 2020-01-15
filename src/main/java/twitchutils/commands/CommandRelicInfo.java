@@ -3,7 +3,6 @@ package twitchutils.commands;
 import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -32,7 +31,7 @@ public class CommandRelicInfo {
             this.isShared = isShared;
         }
 
-        public RelicWithColor(AbstractRelic abstractRelic, AbstractCard.CardColor cardColor){
+        public RelicWithColor(AbstractRelic abstractRelic, AbstractCard.CardColor cardColor) {
             this.abstractRelic = abstractRelic;
             this.isShared = false;
             this.cardColor = cardColor;
@@ -46,8 +45,8 @@ public class CommandRelicInfo {
 
         HashMap<AbstractCard.CardColor, HashMap<String, AbstractRelic>> moddedRelics =
                 BaseMod.getAllCustomRelics(); // only get modded character only relic
-        for(AbstractCard.CardColor tarColorPool: moddedRelics.keySet()){
-            for(AbstractRelic tarRelic: moddedRelics.get(tarColorPool).values()){
+        for (AbstractCard.CardColor tarColorPool : moddedRelics.keySet()) {
+            for (AbstractRelic tarRelic : moddedRelics.get(tarColorPool).values()) {
                 relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
                         new RelicWithColor(tarRelic, tarColorPool));
             }
@@ -82,13 +81,11 @@ public class CommandRelicInfo {
                     new RelicWithColor(tarRelic, AbstractCard.CardColor.BLUE));
         }
 
-        if (Settings.isBeta) { // If it is beta
-            HashMap<String, AbstractRelic> purpleRelics =
-                    (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "purpleRelics");
-            for (AbstractRelic tarRelic : purpleRelics.values()) {
-                relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
-                        new RelicWithColor(tarRelic, AbstractCard.CardColor.PURPLE));
-            }
+        HashMap<String, AbstractRelic> purpleRelics =
+                (HashMap<String, AbstractRelic>) ReflectionHacks.getPrivateStatic(RelicLibrary.class, "purpleRelics");
+        for (AbstractRelic tarRelic : purpleRelics.values()) {
+            relicInfos.put(tarRelic.name.replaceAll(" ", "").toLowerCase(),
+                    new RelicWithColor(tarRelic, AbstractCard.CardColor.PURPLE));
         }
     }
 
@@ -133,10 +130,9 @@ public class CommandRelicInfo {
             AbstractRelic tarRelic = tarRelicWithColor.abstractRelic.makeCopy();
 
             String targetMessage = "";
-            if(tarRelicWithColor.isShared){
+            if (tarRelicWithColor.isShared) {
                 targetMessage = getParsedRelicString(relicInfoConfigs.RELICINFO_INFO_PUBLIC_MESSAGE, tarRelic, user);
-            }
-            else {
+            } else {
                 targetMessage = getParsedRelicString(relicInfoConfigs.RELICINFO_INFO_PRIVATE_MESSAGE, tarRelic, user)
                         .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_COLOR,
                                 CharacterHelper.getCharacterHelper().getLocalizedCharacterName(tarRelicWithColor.cardColor));
@@ -157,7 +153,7 @@ public class CommandRelicInfo {
         }
     }
 
-    public String getParsedRelicString(String origin, AbstractRelic relic){
+    public String getParsedRelicString(String origin, AbstractRelic relic) {
         return origin
                 .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_NAME, relic.name)
                 .replaceAll(RelicInfoConfigs.DESCRIPTION_RELICINFO_ID, relic.relicId)
@@ -169,7 +165,7 @@ public class CommandRelicInfo {
                         CharacterHelper.getCharacterHelper().getLocalizedRelicTier(relic.tier));
     }
 
-    public String getParsedRelicString(String origin, AbstractRelic relic, String user){
+    public String getParsedRelicString(String origin, AbstractRelic relic, String user) {
         return getParsedRelicString(origin, relic)
                 .replaceAll(RelicInfoConfigs.DESCRIPTION_TWITCH_VIEWER_NAME, user);
     }
