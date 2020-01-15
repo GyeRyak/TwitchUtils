@@ -28,10 +28,10 @@ public class CommandCurrentBoss {
     }
 
     public void addCommand() {
-        addCommandDeck();
+        addCommandCurrentBoss();
     }
 
-    public void addCommandDeck() {
+    public void addCommandCurrentBoss() {
         if (currentBossConfigs.CURRENTBOSS_ENABLED &&
                 AbstractDungeon.topPanel.twitch.isPresent()) {
             ((List<TwitchMessageListener>)
