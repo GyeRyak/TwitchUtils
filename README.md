@@ -24,6 +24,8 @@ If you aren't mind localizing default of the commands/message and some strings, 
 * Check shop potion (ALL/specific)
 * Search specific relic
 * Search specific card
+* Search specific keyword
+* Check current boss
 
 
 ### To-Do

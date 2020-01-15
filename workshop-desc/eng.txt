@@ -32,12 +32,16 @@ You can toggle that disable stuff with in-game config(and .json config file)
 [*] [b]Disable Card & Boss Relic Voting[/b]
 You can toggle this stuff in-game
 
-[*] [b]Search Specific Card/Relic Info[/b]
+[*] [b]Search Specific Card/Relic/Keyword Info[/b]
 !cardinfo <card name>, !cardinfo <card name>+ for upgraded card. Same with !ci
 !relicinfo <relic name>, Same with !ri
+!keywordinfo <keyword aliases>, Same with !ki
+
+[*] [b]Check Current Boss[/b]
+!currentboss, same with !cb
 
 [*] [b]Other Mod support[/b]
-Character/Card/Potion/Relic from other workshop can be checkable with this
+Character/Card/Potion/Relic/Keyword from other workshop can be checkable with this
 [/list]
 
 
