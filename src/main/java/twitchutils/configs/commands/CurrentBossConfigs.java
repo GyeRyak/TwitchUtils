@@ -2,7 +2,6 @@ package twitchutils.configs.commands;
 
 import twitchutils.configs.core.ConfigBasis;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 

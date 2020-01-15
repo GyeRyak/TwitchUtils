@@ -1,9 +1,9 @@
 {
   "CURRENTBOSS_COMMAND": [
     "!cb",
-    "!현재보스"
+    "!currentboss"
   ],
-  "CURRENTBOSS_MESSAGE": "@<T_VIEWER> <CB_ACT>막: <CB_BOSS>",
+  "CURRENTBOSS_MESSAGE": "@<T_VIEWER> Act <CB_ACT>: <CB_BOSS>",
   "CURRENTBOSS_ENABLED": true,
   "TIMEOUT_GLOBAL": 1000,
   "MAX_LEN": 500,
