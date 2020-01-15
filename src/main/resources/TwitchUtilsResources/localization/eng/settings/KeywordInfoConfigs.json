@@ -1,0 +1,12 @@
+{
+  "KEYWORDINFO_COMMAND": [
+    "!keywordinfo",
+    "!ki"
+  ],
+  "KEYWORDINFO_INFO_MESSAGE": "@<T_VIEWER> <KI_REQUEST> -> <KI_NAME>: <KI_DESC>",
+  "KEYWORDINFO_NONE_MESSAGE": "@<T_VIEWER> No such keyword with '<KI_REQUEST>'",
+  "KEYWORDINFO_ENABLED": true,
+  "TIMEOUT_GLOBAL": 100,
+  "MAX_LEN": 5000,
+  "COMMENTS": []
+}

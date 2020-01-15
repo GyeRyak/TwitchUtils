@@ -1,0 +1,12 @@
+{
+  "KEYWORDINFO_COMMAND": [
+    "!키워드정보",
+    "!ki"
+  ],
+  "KEYWORDINFO_INFO_MESSAGE": "@<T_VIEWER> <KI_REQUEST> -> <KI_NAME>: <KI_DESC>",
+  "KEYWORDINFO_NONE_MESSAGE": "@<T_VIEWER> '<KI_REQUEST>'(으)로 확인되는 키워드가 없습니다.",
+  "KEYWORDINFO_ENABLED": true,
+  "TIMEOUT_GLOBAL": 100,
+  "MAX_LEN": 5000,
+  "COMMENTS": []
+}
