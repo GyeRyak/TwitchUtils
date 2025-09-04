@@ -1,0 +1,17 @@
+{
+  "chzzkutils:Options": {
+    "TEXT": [
+      "",
+      "치지직 연동 활성화",
+      "치지직 채널 ID"
+    ]
+  },
+  "chzzkutils:Mods_Descriptions": {
+    "TEXT": [
+      "NOTE: BaseMod Default Description",
+      "모든 모드에 필수적인 모드",
+      "NOTE: ChzzkUtils Default Description",
+      "지금 사용한 명령어"
+    ]
+  }
+}

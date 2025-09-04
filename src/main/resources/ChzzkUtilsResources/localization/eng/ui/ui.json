@@ -1,0 +1,17 @@
+{
+  "chzzkutils:Options": {
+    "TEXT": [
+      "",
+      "Enable Chzzk Integration",
+      "Chzzk Channel ID"
+    ]
+  },
+  "chzzkutils:Mods_Descriptions": {
+    "TEXT": [
+      "NOTE: BaseMod Default Description",
+      "Essential for all mods",
+      "NOTE: ChzzkUtils Default Description",
+      "Mod that you used just now"
+    ]
+  }
+}

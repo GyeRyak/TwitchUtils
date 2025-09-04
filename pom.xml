@@ -4,13 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>TwitchUtils</groupId>
-    <artifactId>TwitchUtils</artifactId>
+    <groupId>ChzzkUtils</groupId>
+    <artifactId>ChzzkUtils</artifactId>
     <version>v1.3.0</version>
     <packaging>jar</packaging>
 
-    <name>TwitchUtils</name>
-    <description>Bunches of utils for Twitch streamer!</description>
+    <name>ChzzkUtils</name>
+    <description>Bunches of utils for Chzzk streamer!</description>
+
+    <repositories>
+        <repository>
+            <id>mavenCentral</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -34,10 +41,15 @@
             <scope>system</scope>
             <systemPath>${basedir}/../libs/ModTheSpire.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>io.github.R2turnTrue</groupId>
+            <artifactId>chzzk4j</artifactId>
+            <version>0.1.1</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>TwitchUtils</finalName>
+        <finalName>ChzzkUtils</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -57,7 +69,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/TwitchUtils.jar" tofile="../libs/TwitchUtils.jar"/>
+                                <copy file="target/ChzzkUtils.jar" tofile="../libs/ChzzkUtils.jar"/>
                             </target>
                         </configuration>
                         <goals>
